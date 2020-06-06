@@ -30,4 +30,4 @@ def get_prediction(image_path):
    # print("We predict that this is a", class_name)
 
 
-get_prediction('dog.jpg')
+get_prediction('dogSample.jpg')
