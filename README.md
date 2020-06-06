@@ -10,21 +10,16 @@ This is a simple web app to classify cat and dog
 ### Start Tensorflow Server using Docker
 ```console
 foo@bar:~$ pwd
-foo
 ```
 ```console
 foo@bar:~$ sudo docker ps
-foo
 ```
 ```console
-foo@bar:~$ sudo docker run -p 8501:8501 --name==pets -v "../../../PetApp/pets/:/models/pets/1"
--e MODEL_NAME=pets tensorflow/serving
-foo
+foo@bar:~$ sudo docker run -p 8501:8501 --name==pets -v "../../../PetApp/pets/:/models/pets/1" -e MODEL_NAME=pets tensorflow/serving
 ```
 ### Demo
 ```console
 foo@bar:~$ python run app.py
-foo
 ```
 
 Main Page:
