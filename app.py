@@ -16,11 +16,15 @@ def index():
             image_path = os.path.join('static', upload_file.filename)
             upload_file.save(image_path)
 
-            result =  inference.get_prediction(image_path)
-            predict_score = result[0]
-            class_name = result[1]
-            print('The predict score is: ', predict_score)
-            print('We predict it is a: ', class_name)
+            predict_result = inference.get_prediction(image_path)
+            predict_score = predict_result[0]
+            class_name = predict_result[1]
+            result ={
+                'predict_score': predict_score,
+                'class_name': class_name,
+                'image_path': image_path,
+            }
+            return render_template('show.html', result=result)
 
     return render_template('index.html')
 

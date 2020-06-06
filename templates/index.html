@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<style>
+    h1 {
+        color: firebrick;
+    }
+    p {padding: 100px}
+</style>
     <div class = "container">
-        <h1>Upload File</h1>
+        <h1>Classify Cat and Dog</h1>
         <hr>
         <form class="form-inline" action="{{ url_for('index') }}" method="post"
         enctype="multipart/form-data">
-
             <div class = "form-group">
                 <input type="file" name="file" class="btn btn-default">
             </div>
@@ -15,6 +21,9 @@
                 <input type="submit" value="upload" class="btn btn-default">
             </div>
         </form>
-
+        <p>
+        <img src = "{{ url_for('static', filename='dogcat.png') }}" width="700" height="auto">
+        </p>
     </div>
+
 {% endblock %}

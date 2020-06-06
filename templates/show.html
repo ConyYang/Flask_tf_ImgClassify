@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+    h3, h4{
+        color: blueviolet;
+        text-align: center;
+    }
+</style>
+<div>
+    <div>
+        <img src = "{{ result.image_path }}" class="img-circle"
+             width="300" height="auto">
+    </div>
+    <h3>We Predict it's a: {{ result.class_name }}</h3>
+    <h4>The Predict Score is: {{ result.predict_score }}</h4>
+    <a href="{{ url_for('index') }}" class = "btn btn-group-justified">Back To Main</a>
+</div>
+{% endblock %}
